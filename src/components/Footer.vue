@@ -1,17 +1,19 @@
 <template>
-  <footer>
+  <footer class="footer">
     footer
   </footer>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Footer extends Vue {
-  @Prop() private msg!: string;
 }
 </script>
 
 <style scoped lang="scss">
+.footer {
+  background: #ddd;
+}
 </style>
