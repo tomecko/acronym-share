@@ -13,15 +13,21 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
+import { getEntry } from './actions/get-entry';
 import Footer from './components/Footer.vue';
 import Goal from './components/Goal.vue';
 import Header from './components/Header.vue';
 import { defaultSpace, spaces } from './config/spaces';
+import { EntryStatus } from './model/entry-status';
 import { ISpace } from './model/space';
 import { entryService } from './services/entry';
-import { Store, store } from './store';
+import { Store, store } from './services/store';
 
 @Component({
+  beforeRouteUpdate: (to, from, next) => {
+    console.log(to, from);
+    next();
+  },
   components: {
     Footer,
     Goal,
@@ -37,9 +43,9 @@ export default class App extends Vue {
 
   private setStore() {
     store.setSpace(spaces.get(this.$route.params.spaceName));
-    entryService.get(this.$route.params.entryId).then((entry) => {
-      store.updateWithEntry(entry);
-    });
+    if (store.entryStatus === EntryStatus.Unfetched) {
+      getEntry();
+    }
   }
 }
 </script>

@@ -6,9 +6,10 @@
     </header>
     <textarea
       @input="$emit('input', $event.target.value)"
+      :disabled="store.isEntrySyncing()"
+      :placeholder="store.isEntrySyncing() ? 'loading…' : 'type here…'"
       :value="value"
       class="input"
-      placeholder="type here…"
     />
   </section>
 </template>
@@ -16,10 +17,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
+import { Store, store } from '@/services/store';
+
 @Component
 export default class GoalSection extends Vue {
   @Prop(String) private name!: string;
   @Prop(String) private value!: string;
+  private store: Store = store;
 }
 </script>
 
@@ -46,6 +50,11 @@ export default class GoalSection extends Vue {
 
   border: 0;
   outline: 0;
+  padding: 1em;
+
+  &[disabled] {
+    background: #ddd;
+  }
 }
 
 </style>

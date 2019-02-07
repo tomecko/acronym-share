@@ -9,6 +9,8 @@
     "test": "yarn check --integrity && yarn lint && yarn build"
   },
   "dependencies": {
+    "firebase": "5.8.2",
+    "http-status-codes": "1.3.0",
     "immutable": "4.0.0-rc.12",
     "monet": "0.9.0",
     "normalize.css": "8.0.1",
