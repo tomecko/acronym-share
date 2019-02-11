@@ -6,9 +6,7 @@
       :name="fieldVariants.first().name"
       :value="store.getText(name)"
       v-for="[name, fieldVariants] in store.space.orJust([]).fields.entrySeq().toArray()"
-    >
-      {{ name }} {{ fieldVariants.first().info }}
-    </GoalSection>
+    >{{ fieldVariants.first().info }}</GoalSection>
   </main>
 </template>
 

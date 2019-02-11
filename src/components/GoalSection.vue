@@ -2,7 +2,7 @@
   <section class="goal-section">
     <header class="header">
       <h2>{{ name }}</h2>
-      <p><slot /></p>
+      <p v-if="$slots.default"><slot /></p>
     </header>
     <textarea
       @input="$emit('input', $event.target.value)"
@@ -28,29 +28,40 @@ export default class GoalSection extends Vue {
 </script>
 
 <style scoped lang="scss">
+@import '../global';
+
 .goal-section {
   display: flex;
+  flex-wrap: wrap;
 
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #aaa;
+  min-height: 150px;
 }
 
 .header {
-  background: green;
-  flex: 0 300px;
-  padding: 1em;
+  background: #ccc;
+  color: $primaryDark;
+  flex: 1 300px;
+  padding: 15px;
 
   h2 {
+    font-size: 1.2em;
     margin: 0;
+    text-transform: uppercase;
+
+    &::first-letter {
+      font-size: 1.45em;
+    }
   }
 }
 
 .input {
-  background: #eee;
-  flex: 1;
+  background: #fff;
+  flex: 100 300px;
 
   border: 0;
   outline: 0;
-  padding: 1em;
+  padding: 15px;
 
   &[disabled] {
     background: #ddd;

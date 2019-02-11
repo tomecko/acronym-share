@@ -1,11 +1,15 @@
 <template>
   <header class="header">
-    <h1>{{ store.space.fold('')(({ name }) => name) }}</h1>
+    <h1>
+      {{ store.space.fold('')(({ name }) => name) }}
+    </h1>
     <button
       @click="saveEntry"
-      :disabled="store.isEntrySyncing()"
+      :class="store.entryStatus"
+      :disabled="saveDisabled"
+      class="save"
     >
-      save ({{ store.entryStatus }})
+      {{ saveText }}
     </button>
   </header>
 </template>
@@ -14,6 +18,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 import { saveEntry } from '@/actions/save-entry';
+import { EntryStatus } from '@/model/entry-status';
 import { entryService } from '@/services/entry';
 import { Store, store } from '@/services/store';
 
@@ -21,11 +26,60 @@ import { Store, store } from '@/services/store';
 export default class Header extends Vue {
   private store: Store = store;
   private saveEntry = saveEntry;
+
+  get saveDisabled(): boolean {
+    return ![EntryStatus.New, EntryStatus.Unsaved]
+      .includes(this.store.entryStatus);
+  }
+
+  get saveText(): string {
+    return this.store.entryStatus === EntryStatus.Synced
+      ? 'saved'
+      : 'save';
+  }
 }
 </script>
 
 <style scoped lang="scss">
+@import '../global';
+
 .header {
-  background: red;
+  display: flex;
+
+  background: $primaryDark;
+  color: $primaryDarkText;
+}
+
+h1 {
+  flex: 5 300px;
+
+  line-height: 60px;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.save {
+  flex: 1;
+
+  background: $secondary;
+  border: 0;
+  color: $secondaryText;
+  cursor: pointer;
+  display: block;
+  font-size: 1.5em;
+  padding: 15px 1em;
+  text-transform: uppercase;
+
+  &.synced {
+    background: $primary;
+    color: $primaryText;
+  }
+
+  &,
+  &:focus {
+    outline: 0;
+  }
 }
 </style>

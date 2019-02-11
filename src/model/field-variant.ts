@@ -1,4 +1,4 @@
 export interface IFieldVariant {
-  info: string;
+  info?: string;
   name: string;
 }

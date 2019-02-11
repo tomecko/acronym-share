@@ -1,0 +1,40 @@
+$primary: #37474f;
+$primaryText: #fff;
+
+$primaryDark: #102027;
+$primaryDarkText: #fff;
+
+$primaryLight: #62727b;
+$primaryLightText: #fff;
+
+$secondary: #ffee58;
+$secondaryText: #000;
+
+$filler: #eee;
+$fillerDark: darken(#eee, 10%);
+$fillerText: #000;
+
+$appMaxWidth: 900px;
+
+body {
+  background: #eee;
+  font-family: sans-serif;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+a.on-primary-dark {
+  color: #fff;
+}
+
+p.above-list {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

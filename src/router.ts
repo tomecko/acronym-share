@@ -28,7 +28,6 @@ export const router = new VueRouter({
     {
       path: '/:spaceName/:entryId',
       beforeEnter: (to, from, next) => {
-        console.log('/:spaceName/:entryId');
         next();
       },
     },

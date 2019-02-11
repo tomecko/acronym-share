@@ -25,7 +25,6 @@ import { Store, store } from './services/store';
 
 @Component({
   beforeRouteUpdate: (to, from, next) => {
-    console.log(to, from);
     next();
   },
   components: {
@@ -50,22 +49,16 @@ export default class App extends Vue {
 }
 </script>
 
+<style lang="scss">
+@import 'global';
+</style>
+
 <style scoped lang="scss">
 @import url('../node_modules/normalize.css');
 @import 'global';
 
-$appHeaderHeight: 100px;
-
-.app-header {
-  height: $appHeaderHeight;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
+#app {
+  margin: 0 auto;
+  max-width: $appMaxWidth;
 }
-
-.goal {
-  padding-top: $appHeaderHeight;
-}
-
 </style>

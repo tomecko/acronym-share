@@ -9,5 +9,8 @@ export const getEntry = () => {
     .then((entry) => {
       store.updateWithEntry(entry);
       store.setEntryStatus(EntryStatus.Synced);
+    })
+    .catch(() => {
+      store.setEntryStatus(EntryStatus.New);
     });
 };

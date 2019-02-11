@@ -2,40 +2,60 @@ import { OrderedMap, OrderedSet } from 'immutable';
 
 import { ISpace } from '@/model/space';
 
-export const spaces = OrderedMap<ISpace>({
+export const spaces = OrderedMap({
   smart: {
     fields: OrderedMap({
       s: OrderedSet([ {
-          info: 'ssssss',
           name: 'specific',
         },
       ]),
       m: OrderedSet([
         {
-          info: 'mmmmm',
           name: 'measurable',
         },
       ]),
       a: OrderedSet([
         {
-          info: 'aaa',
           name: 'achievable',
         },
       ]),
       r: OrderedSet([
         {
-          info: 'rr',
           name: 'relevant',
         },
       ]),
       t: OrderedSet([
         {
-          info: 'tbtbtb',
           name: 'time-bound',
         },
       ]),
     }),
     name: 'smart',
+  },
+  pure: {
+    fields: OrderedMap({
+      p: OrderedSet([
+        {
+          name: 'positively stated',
+        },
+      ]),
+      u: OrderedSet([
+        {
+          name: 'understood',
+        },
+      ]),
+      r: OrderedSet([
+        {
+          name: 'relevant',
+        },
+      ]),
+      e: OrderedSet([
+        {
+          name: 'ethical',
+        },
+      ]),
+    }),
+    name: 'pure',
   },
 });
 
