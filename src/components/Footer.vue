@@ -24,7 +24,7 @@
       </li>
     </ul>
     <p>
-      See
+      More details
       <a
         class="on-primary-dark"
         href="https://en.wikipedia.org/wiki/SMART_criteria"

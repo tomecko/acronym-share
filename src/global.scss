@@ -15,7 +15,7 @@ $fillerDark: darken(#eee, 10%);
 $fillerText: #000;
 
 body {
-  background: #eee;
+  background: $primaryDark;
   font-family: sans-serif;
 }
 
