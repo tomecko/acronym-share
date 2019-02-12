@@ -20,10 +20,6 @@ export class Store {
     return this.entryStatus === EntryStatus.Syncing;
   }
 
-  // public isEntrySaveable(): boolean {
-  //   return this.entryStatus === EntryStatus.Unsaved || this.entryStatus === EntryStatus.New;
-  // }
-
   public setSpace(space: ISpace | undefined) {
     this.space = Maybe.fromNull(space);
   }

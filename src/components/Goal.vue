@@ -1,10 +1,10 @@
 <template>
   <main>
     <GoalSection
-      @input="setText(name, $event)"
+      @input="setText(fieldVariants.first().name, $event)"
       :key="fieldVariants.first().name"
       :name="fieldVariants.first().title"
-      :value="store.getText(name)"
+      :value="store.getText(fieldVariants.first().name)"
       v-for="[name, fieldVariants] in store.space.orJust([]).fields.entrySeq().toArray()"
     >{{ fieldVariants.first().info }}</GoalSection>
   </main>
