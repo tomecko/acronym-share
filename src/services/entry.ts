@@ -1,7 +1,7 @@
 import * as httpCode from 'http-status-codes';
 
 import { IEntry } from '@/model/entry';
-import { db } from './firebase';
+import { db, firestore } from './firebase';
 
 class EntryService {
   private static db = db.collection('entries');
@@ -14,7 +14,10 @@ class EntryService {
   }
 
   public create(entry: IEntry): Promise<any> {
-    return EntryService.db.add(entry);
+    return EntryService.db.add({
+      ...entry,
+      added: firestore.Timestamp.now(),
+    });
   }
 }
 
