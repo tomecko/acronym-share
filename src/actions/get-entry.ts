@@ -11,7 +11,7 @@ export const getEntry = () => {
       store.setEntryStatus(EntryStatus.Synced);
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error); // tslint:disable-line:no-console
       store.setEntryStatus(EntryStatus.New);
     });
 };
