@@ -38,7 +38,7 @@ jobs:
             ls -larth
             ssh -p 222 $SSH_USER@$SSH_HOST "find ~/domains/acronymshare.com/public_html -mindepth 1 -maxdepth 1 -not -name cgi-bin -exec rm -rv {} \;"
             mv dist web
-            scp -P 222 -r web/* $SSH_USER@$SSH_HOST:~/domains/acronymshare.com/public_html
+            scp -P 222 -r web/. $SSH_USER@$SSH_HOST:~/domains/acronymshare.com/public_html
 
 workflows:
   version: 2
