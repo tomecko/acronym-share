@@ -77,6 +77,10 @@ h1 {
     color: $primaryText;
   }
 
+  &.syncing {
+    cursor: wait;
+  }
+
   &,
   &:focus {
     outline: 0;

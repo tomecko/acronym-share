@@ -56,9 +56,4 @@ export default class App extends Vue {
 <style scoped lang="scss">
 @import url('../node_modules/normalize.css');
 @import 'global';
-
-#app {
-  margin: 0 auto;
-  max-width: $appMaxWidth;
-}
 </style>

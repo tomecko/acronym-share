@@ -2,8 +2,8 @@
   <main>
     <GoalSection
       @input="setText(name, $event)"
-      :key="name"
-      :name="fieldVariants.first().name"
+      :key="fieldVariants.first().name"
+      :name="fieldVariants.first().title"
       :value="store.getText(name)"
       v-for="[name, fieldVariants] in store.space.orJust([]).fields.entrySeq().toArray()"
     >{{ fieldVariants.first().info }}</GoalSection>

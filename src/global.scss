@@ -14,8 +14,6 @@ $filler: #eee;
 $fillerDark: darken(#eee, 10%);
 $fillerText: #000;
 
-$appMaxWidth: 900px;
-
 body {
   background: #eee;
   font-family: sans-serif;
@@ -25,12 +23,20 @@ h1, h2, p {
   margin-top: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 a.on-primary-dark {
   color: #fff;
 }
 
+p {
+  line-height: 1.45;
+}
+
 p.above-list {
-  margin-bottom: 0;
+  margin-bottom: 7px;
 }
 
 ul {

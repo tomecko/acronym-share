@@ -60,8 +60,9 @@ export default class GoalSection extends Vue {
   flex: 100 300px;
 
   border: 0;
+  font-size: 1.2em;
   outline: 0;
-  padding: 15px;
+  padding: 20px 20px 30px 20px;
 
   &[disabled] {
     background: #ddd;
