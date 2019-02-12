@@ -7,7 +7,7 @@ class EntryService {
   private static db = db.collection('entries');
 
   public get(id: string): Promise<any> {
-    return EntryService.db.where('publicId', '==', id).get()
+    return EntryService.db.where('publicId', '==', id).limit(1).get()
       .then((res) => res.empty
         ? Promise.reject(Error(String(httpCode.NOT_FOUND)))
         : Promise.resolve(res.docs[0].data()));

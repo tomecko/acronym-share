@@ -10,7 +10,8 @@ export const getEntry = () => {
       store.updateWithEntry(entry);
       store.setEntryStatus(EntryStatus.Synced);
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error);
       store.setEntryStatus(EntryStatus.New);
     });
 };
