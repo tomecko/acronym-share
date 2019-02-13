@@ -2,7 +2,14 @@
   <footer class="footer">
     <p>
       The website acronymshare.com is a free service for creating,
-      sharing and reviewing acronym-based information like well-known SMART
+      sharing and reviewing acronym-based information like well-known
+      <a
+        class="more-details-link"
+        href="https://en.wikipedia.org/wiki/SMART_criteria"
+        target="_blank"
+      >
+        SMART
+      </a>
       used for defining objectives.
     </p>
     <p class="above-list">
@@ -23,16 +30,6 @@
         </a>
       </li>
     </ul>
-    <p>
-      More details
-      <a
-        class="more-details-link"
-        href="https://en.wikipedia.org/wiki/SMART_criteria"
-        target="_blank"
-      >
-        SMART_criteria
-      </a>
-    </p>
   </footer>
 </template>
 
