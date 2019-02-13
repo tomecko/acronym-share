@@ -1,10 +1,10 @@
-$primary: #37474f;
+$primary: #311b92;
 $primaryText: #fff;
 
-$primaryDark: #102027;
+$primaryDark: #000063;
 $primaryDarkText: #fff;
 
-$primaryLight: #62727b;
+$primaryLight: #6746c3;
 $primaryLightText: #fff;
 
 $secondary: #ffee58;
@@ -15,7 +15,7 @@ $fillerDark: darken(#eee, 10%);
 $fillerText: #000;
 
 body {
-  background: $primaryDark;
+  background: $filler;
   font-family: sans-serif;
 }
 
@@ -25,10 +25,6 @@ h1, h2, p {
 
 a {
   text-decoration: none;
-}
-
-a.on-primary-dark {
-  color: #fff;
 }
 
 p {

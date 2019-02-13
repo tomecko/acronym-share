@@ -15,7 +15,7 @@
         class="space-link-item"
       >
         <a
-          class="space-link on-primary-dark"
+          class="space-link"
           :href="`/${name}`"
           target="_blank"
         >
@@ -26,11 +26,11 @@
     <p>
       More details
       <a
-        class="on-primary-dark"
+        class="more-details-link"
         href="https://en.wikipedia.org/wiki/SMART_criteria"
         target="_blank"
       >
-        https://en.wikipedia.org/wiki/SMART_criteria
+        SMART_criteria
       </a>
     </p>
   </footer>
@@ -53,9 +53,10 @@ export default class Footer extends Vue {
 @import '../global';
 
 .footer {
-  background: $primaryDark;
-  color: $primaryLight;
-  padding: 15px;
+  background: $filler;
+  border-top: 2px solid $primaryDark;
+  color: $primaryDark;
+  padding: 20px;
 }
 
 .space-links {
@@ -71,5 +72,12 @@ export default class Footer extends Vue {
 .space-link {
   margin-right: 20px;
   text-transform: uppercase;
+}
+
+.space-link,
+.more-details-link {
+  background: $secondary;
+  color: $primaryDark;
+  font-weight: 700;
 }
 </style>

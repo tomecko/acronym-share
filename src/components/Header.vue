@@ -46,8 +46,9 @@ export default class Header extends Vue {
 .header {
   display: flex;
 
-  background: $primaryDark;
-  color: $primaryDarkText;
+  background: $primaryLight;
+  color: $primaryLightText;
+  border-bottom: 4px solid $primaryDark;
 }
 
 h1 {
@@ -55,8 +56,7 @@ h1 {
 
   line-height: 60px;
   margin: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 20px;
   text-transform: uppercase;
 }
 
@@ -73,7 +73,7 @@ h1 {
   text-transform: uppercase;
 
   &.synced {
-    background: $primary;
+    background: transparent;
     color: $primaryText;
   }
 
