@@ -39,7 +39,7 @@ export default class GoalSection extends Vue {
 }
 
 .header {
-  background: #dadada;
+  background: #f4f4f4;
   color: $primaryDark;
   flex: 1 300px;
   padding: 15px 20px;
